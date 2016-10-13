@@ -1,0 +1,42 @@
+@charset "UTF-8";
+//sass的文件入口
+@import "./components/swiper/swiper-3.3.1.min";
+@import './components/swiper/animate.min';
+@import "./swiper";
+
+
+//导入slider样式
+@import "./slider";
+
+
+@import "./components/iscroll/iscroll";
+
+
+
+#preload{
+	display:block;
+	height:100%;
+	width:100%;
+	background:url(../img/1.jpg) no-repeat center;
+	background-size:cover;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+
+#mainContent{
+	#footer{
+		.button{
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.button:hover{
+			color:#7FFF00;
+		}
+	}
+}
