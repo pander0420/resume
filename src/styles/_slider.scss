@@ -1,4 +1,11 @@
-$buttonBg:blue;
+/*-----------------------------------------------------------------------------
+swiper样式内容
+第一页为封面
+第二页为个人介绍
+第三页自我评价
+作者：
+-----------------------------------------------------------------------------*/
+$buttonBg:#8B4513;
 .swiper-container{
 	.swiper-wrapper{
 
@@ -20,7 +27,7 @@ $buttonBg:blue;
 			}
 			#picture{
 				height:30%;
-				background:#fff;
+				background:url(../img/2.jpg) no-repeat -120px -35px;
 				width:50%;
 				border-radius:60% 60% 50% 50%;
 				margin-bottom:15%;
@@ -53,7 +60,7 @@ $buttonBg:blue;
 				font-size:40px;
 				justify-content: center;
 				align-items:center;
-				margin:5px 10px;
+				margin:20px 10px;
 				background:#B2CBEA;
 			}
 			.item{
@@ -79,8 +86,43 @@ $buttonBg:blue;
 
 		}
 		.swiper-slide:nth-child(3){
+			flex-direction:column;
 			background:url("../img/5.jpg") no-repeat center;
 			background-size:100% 100%;
+			.title{
+				width:80%;
+				flex:1;
+				font-family:"微软雅黑" ;
+				color:#000;
+				display: flex;
+				font-size:40px;
+				justify-content: center;
+				align-items:center;
+				margin:50px 10px;
+				background:#fff;
+				box-shadow:2px 2px 20px 5px #333;
+			}
+			.txt{
+				text-indent:36px;
+				width:80%;
+				flex:2;
+				font-family:"微软雅黑" ;
+				color:#666;
+				display: flex;
+				font-size:18px;
+				justify-content: center;
+				align-items:center;
+			}
+			button{
+				border:none;
+				border-radius:20px;
+				height:80px;
+				width:200px;
+				font-size:18px;
+				color:#fff;
+				background:$buttonBg;
+				
+			}
 		}
 		.swiper-slide{
 			button{

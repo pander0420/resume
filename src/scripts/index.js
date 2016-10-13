@@ -25,7 +25,7 @@ $('#enter').tap(function(){
   		console.log(response)
   		var html="";
   		for(var i=0;i<response.length;i++){
-  			html+="<li>"+response[i].category+"</li>";
+  			html+="<li><span class='iconfont'>"+response[i].iconfont+"</span><div class='category'>"+response[i].category+"</div>"+"<div class='name'>"+response[i].name+"</div>"+"</li>";
   			
   		}
       $("#scroller ul").html(html);
@@ -61,16 +61,37 @@ var SwiperAnimate = require('./components/swiper/swiper.animate1.0.2.min');
  $("#footer div").tap(function(){
 
  	var apiTarget = $(this).attr("id"); 
-  console.log(apiTarget);
- 	$.post('/api/'+apiTarget, {}, function(response){
+  $("#header").html(apiTarget);
+  if(apiTarget=="skill"||apiTarget=="interests"){
+    $.post('/api/'+apiTarget, {}, function(response){
+
       var html="";
-  		for(var i=0;i<response.length;i++){
-        html+="<li>"+response[i].category+"</li>";
+      for(var i=0;i<response.length;i++){
+        html+="<li><span class='iconfont'>"+response[i].iconfont+"</span><div class='category'>"+response[i].category+"</div>"+"<div class='name'>"+response[i].name+"</div>"+"</li>";
         
       }
 
       $("#scroller ul").html(html);
-	})
+    })
+  }
+  if(apiTarget=="me"){
+    $('#mainContent').hide();
+    $('.swiper-container').show();
+
+  }
+  else{
+    $.post('/api/'+apiTarget, {}, function(response){
+
+      var html="";
+      for(var i=0;i<response.length;i++){
+        html+="<li><span class='iconfont'>"+response[i].iconfont+"</span><div class='category'>"+response[i].category+"</div>"+"<div class='name'>"+response[i].name+"</div>"+"</li>";
+        
+      }
+
+      $("#scroller ul").html(html);
+    })
+  }
+ 	
 
  })
 

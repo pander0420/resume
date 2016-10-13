@@ -177,6 +177,14 @@ gulp.task('watch',function(){
 		name:'CSS',
 		emitOnGlob:false,
 	},queue.getHandler('sass','verCss',"html"));
+	watch('src/**/*.*',{
+		name:'CSS',
+		emitOnGlob:false,
+	},queue.getHandler('copy-images','verCss',"html"));
+	watch('src/styles/**/*.*',{
+		name:'CSS',
+		emitOnGlob:false,
+	},queue.getHandler('copy-icon','verCss',"html"));
 })
 
 //设置默认任务

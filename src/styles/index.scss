@@ -28,7 +28,32 @@
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;}
 
+/*-----------------------------------------------------------------------------
+skill样式内容
+作者：
+-----------------------------------------------------------------------------*/
 #mainContent{
+	#wrapper{
+		#scroller{
+			ul{
+				li{
+					display:flex;
+					flex-direction:column;
+					justify-content: center;
+					align-items: center;
+					.iconfont{
+						font-size: 30px;
+						color:darkorange;
+					}
+					.category{
+						font-size:24px;
+						color:#666;
+						font-weight:900;
+					}
+				}
+			}
+		}
+	}
 	#footer{
 		.button{
 			display: flex;
@@ -40,3 +65,5 @@
 		}
 	}
 }
+
+
