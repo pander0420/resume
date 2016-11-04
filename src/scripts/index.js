@@ -77,10 +77,26 @@ var SwiperAnimate = require('./components/swiper/swiper.animate1.0.2.min');
       $("#scroller ul").html(html);
     })
   }
+  // if(apiTarget=="project"){
+  //   $.post('/api/'+apiTarget, {}, function(response){
+
+  //     var html="";
+  //     $("#scroller ul").remove();
+  //     $("#scroller").css({height:"100%"});
+  //     $("#scroller").html(html);
+  //     $("#scroller").append("<div class='swiper-container'></div>");
+  //     $("#scroller .swiper-container").append("<div class='swiper-wrapper'></div>");
+  //    for(var i=0;i<response.length;i++){
+  //      html="<div class='swiper-slide'>"+response[i].name+"</div>";
+        
+
+  //    $("#scroller .swiper-wrapper").append(html);
+  //    }
+  //   })
+  // }
   if(apiTarget=="me"){
     $('#mainContent').hide();
     $('.swiper-container').show();
-
   }
   else{
     $.post('/api/'+apiTarget, {}, function(response){
@@ -109,7 +125,9 @@ var SwiperAnimate = require('./components/swiper/swiper.animate1.0.2.min');
   }
  },100);
  
-
+/*-----------------------------------------------------------------------------
+微信调用二维码扫描
+-----------------------------------------------------------------------------*/
  console.log($.post());
 $("#qcode").tap(function(){
     $.post("http://1.1075803802.applinzi.com/php/getsign.php",{
@@ -153,8 +171,60 @@ $("#qcode").tap(function(){
             });
     });
 })
+/*-----------------------------------------------------------------------------
+hbuild调用二维码
+-----------------------------------------------------------------------------*/
+
+// // 扩展API加载完毕后调用onPlusReady回调函数 
+// document.addEventListener( "plusready", onPlusReady, false );
+// // 扩展API加载完毕，现在可以正常调用扩展API
+// function onPlusReady() {
+//   var e = document.getElementById("scan");
+//   e.removeAttribute( "disabled" );
+// }
+// var scan = null;
 
 
 
-
+// function onmarked( type, result ) {
+//   var text = '未知: ';
+//   switch(type){
+//     case plus.barcode.QR:
+//     text = 'QR: ';
+//     break;
+//     case plus.barcode.EAN13:
+//     text = 'EAN13: ';
+//     break;
+//     case plus.barcode.EAN8:
+//     text = 'EAN8: ';
+//     break;
+//   }
+//   location.href=result;
+  
+  
+//   scan.close();
+  
+//   //alert( "成功了"+text+result );
+// }
+// function startRecognize() {
+//   $("#bcid ")
+//   scan = new plus.barcode.Barcode('bcid');
+//   scan.onmarked = onmarked; 
+//   scan.start();
+  
+//   scan.setFlash();
+// }
+// function startScan() {
+  
+// }
+// function cancelScan() {
+  
+//   scan.close();
+//   bcid.style.display="none";
+  
+// }
+// function setFlash() {
+  
+// }
+// $("#qcode").on("click",startRecognize());
 
